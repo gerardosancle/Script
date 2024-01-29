@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#Variables
+limparPantalla=`clear`
+mensaxeDespedida="¡Ata logo!"
+
+# Función suma
+function sumar() {
+    resultado=$(($1 + $2))
+    echo "O resultado da suma: $resultado"
+}
+
+# Función resta
+function restar() {
+    resultado=$(($1 - $2))
+    echo "O resultado da resta: $resultado"
+}
+
+# Función multiplicar
+function multiplicar() {
+    resultado=$(($1 * $2))
+    echo "O resultado da multiplicación: $resultado"
+}
+
+# Función dividir
+function dividir() {
+    if [ $2 -eq 0 ]
+    then
+        echo "Error: Non se puede dividir por cero."
+    else
+        resultado=$(($1 / $2))
+        echo "O resultado da división: $resultado"
+    fi
+}
+
+#Función menú
+function menu() {
+    echo "------ CALCULADORA ------"
+    echo "1. Sumar"
+    echo "2. Restar"
+    echo "3. Multiplicar"
+    echo "4. Dividir"
+    echo "5. Sair"
+    echo "---------------------------"
+}
+
+#Función ingresar números
+function ingresarNumero() {
+  read -p "Ingresa o primer número: " num1
+  read -p "Ingresa o segundo número: " num2
+}
